@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1")
+
+[node name="MapContainer" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 320)
+zoom = Vector2(0.9, 0.9)
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="TimerLabel" type="Label" parent="UI"]
+offset_left = 540.0
+offset_top = 16.0
+offset_right = 740.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+text = "60"
+
+[node name="StatusLabel" type="Label" parent="UI"]
+offset_left = 440.0
+offset_top = 60.0
+offset_right = 840.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+text = "Waiting to see who's IT..."
+
+[node name="TimeALabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 300.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.35, 0.55, 1, 1)
+text = "A Tagged: 0.0s"
+
+[node name="TimeBLabel" type="Label" parent="UI"]
+offset_left = 980.0
+offset_top = 16.0
+offset_right = 1260.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.35, 0.55, 1, 1)
+horizontal_alignment = 2
+text = "B Tagged: 0.0s"
+
+[node name="PickerPanel" type="Panel" parent="UI"]
+visible = false
+offset_left = 340.0
+offset_top = 270.0
+offset_right = 940.0
+offset_bottom = 400.0
+
+[node name="PickerLabel" type="Label" parent="UI/PickerPanel"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 44
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "PLAYER A?"
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+visible = false
+offset_left = 340.0
+offset_top = 240.0
+offset_right = 940.0
+offset_bottom = 470.0
+
+[node name="GameOverLabel" type="Label" parent="UI/GameOverPanel"]
+offset_left = 20.0
+offset_top = 26.0
+offset_right = 580.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Player A Loses!"
+
+[node name="BackButton" type="Button" parent="UI/GameOverPanel"]
+offset_left = 200.0
+offset_top = 180.0
+offset_right = 400.0
+offset_bottom = 222.0
+text = "Back to Menu"
